@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Glossy red message pill for error snackbars. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/aero_radius_field" />
+            <solid android:color="@color/aero_stroke_error" />
+        </shape>
+    </item>
+    <item
+        android:bottom="1dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="21dp" />
+            <gradient
+                android:angle="270"
+                android:centerY="0.55"
+                android:startColor="@color/aero_error_top"
+                android:centerColor="@color/aero_error_mid"
+                android:endColor="@color/aero_error_bottom" />
+            <stroke
+                android:width="@dimen/aero_stroke_thin"
+                android:color="#66FFFFFF" />
+        </shape>
+    </item>
+    <item
+        android:gravity="top|fill_horizontal"
+        android:height="20dp"
+        android:left="6dp"
+        android:right="6dp"
+        android:top="3dp">
+        <shape android:shape="rectangle">
+            <corners
+                android:bottomLeftRadius="6dp"
+                android:bottomRightRadius="6dp"
+                android:topLeftRadius="18dp"
+                android:topRightRadius="18dp" />
+            <gradient
+                android:angle="270"
+                android:startColor="#B3FFFFFF"
+                android:endColor="#1AFFFFFF" />
+        </shape>
+    </item>
+</layer-list>

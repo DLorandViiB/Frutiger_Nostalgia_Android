@@ -16,6 +16,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Local NestJS backend as seen from the Android emulator (10.0.2.2 = host's localhost).
+        // Override with -PapiBaseUrl=http://<host>:<port>/ (or in gradle.properties), e.g. for a real device.
+        val apiBaseUrl = (project.findProperty("apiBaseUrl") as String?) ?: "http://10.0.2.2:8080/"
+        buildConfigField("String", "BASE_URL", "\"$apiBaseUrl\"")
     }
 
     buildTypes {
@@ -31,6 +36,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -44,6 +50,7 @@ dependencies {
     // Navigation Component
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.fragment.ktx)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)

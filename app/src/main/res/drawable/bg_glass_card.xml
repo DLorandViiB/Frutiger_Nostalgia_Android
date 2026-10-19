@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Frosted glass panel: soft drop shadow, translucent white body with a bright border,
+     and a glossy reflection across the top. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Soft shadow (outer, blurred look via two stacked translucent layers) -->
+    <item
+        android:left="2dp"
+        android:right="2dp"
+        android:top="@dimen/aero_card_shadow_offset">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/aero_radius_card" />
+            <solid android:color="#140A3A6B" />
+        </shape>
+    </item>
+    <item
+        android:bottom="2dp"
+        android:left="4dp"
+        android:right="4dp"
+        android:top="4dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/aero_radius_card" />
+            <solid android:color="#1F0A3A6B" />
+        </shape>
+    </item>
+    <!-- Glass body -->
+    <item android:bottom="@dimen/aero_card_shadow_offset">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/aero_radius_card" />
+            <gradient
+                android:angle="270"
+                android:startColor="#C7FFFFFF"
+                android:centerColor="#8CFFFFFF"
+                android:endColor="#A6E6F8FF" />
+            <stroke
+                android:width="@dimen/aero_stroke_glass"
+                android:color="@color/aero_glass_border" />
+        </shape>
+    </item>
+    <!-- Top reflection -->
+    <item
+        android:gravity="top|fill_horizontal"
+        android:height="@dimen/aero_card_highlight_height"
+        android:left="3dp"
+        android:right="3dp"
+        android:top="3dp">
+        <shape android:shape="rectangle">
+            <corners
+                android:bottomLeftRadius="12dp"
+                android:bottomRightRadius="12dp"
+                android:topLeftRadius="25dp"
+                android:topRightRadius="25dp" />
+            <gradient
+                android:angle="270"
+                android:startColor="#B3FFFFFF"
+                android:endColor="#00FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

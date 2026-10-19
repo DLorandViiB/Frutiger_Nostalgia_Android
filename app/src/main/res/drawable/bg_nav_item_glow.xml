@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Selected bottom-nav item gets an aqua halo with a glossy pill behind it. -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <layer-list>
+            <!-- Radial aqua glow -->
+            <item
+                android:bottom="2dp"
+                android:left="6dp"
+                android:right="6dp"
+                android:top="4dp">
+                <shape android:shape="oval">
+                    <gradient
+                        android:centerX="0.5"
+                        android:centerY="0.45"
+                        android:gradientRadius="56dp"
+                        android:startColor="#B327C8E8"
+                        android:centerColor="#4D8FDBFF"
+                        android:endColor="#008FDBFF"
+                        android:type="radial" />
+                </shape>
+            </item>
+            <!-- Glossy pill -->
+            <item
+                android:bottom="8dp"
+                android:left="14dp"
+                android:right="14dp"
+                android:top="8dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="@dimen/aero_radius_pill" />
+                    <gradient
+                        android:angle="270"
+                        android:startColor="#CCFFFFFF"
+                        android:endColor="#408FDBFF" />
+                    <stroke
+                        android:width="@dimen/aero_stroke_thin"
+                        android:color="#B3FFFFFF" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:drawable="@android:color/transparent" />
+</selector>

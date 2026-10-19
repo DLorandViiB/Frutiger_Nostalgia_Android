@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generated: glossy green pill, disabled state. Layers: dark rim, gradient body,
+     bottom inner glow, inner white rim, top-half specular highlight. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Thin darker outer stroke -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/aero_radius_pill" />
+            <solid android:color="@color/aero_stroke_disabled" />
+        </shape>
+    </item>
+    <!-- Gradient base -->
+    <item
+        android:bottom="1dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="27dp" />
+            <gradient
+                android:angle="270"
+                android:centerY="0.55"
+                android:startColor="@color/aero_btn_disabled_top"
+                android:centerColor="@color/aero_btn_disabled_mid"
+                android:endColor="@color/aero_btn_disabled_bottom" />
+        </shape>
+    </item>
+    <!-- Light bouncing up from the bottom edge -->
+    <item
+        android:bottom="2dp"
+        android:gravity="bottom|fill_horizontal"
+        android:height="@dimen/aero_button_glow_height"
+        android:left="18dp"
+        android:right="18dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="12dp" />
+            <gradient
+                android:angle="90"
+                android:startColor="@color/aero_glass_fill"
+                android:endColor="#00FFFFFF" />
+        </shape>
+    </item>
+    <!-- Inner glow rim -->
+    <item
+        android:bottom="2dp"
+        android:left="2dp"
+        android:right="2dp"
+        android:top="2dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="26dp" />
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="@dimen/aero_stroke_thin"
+                android:color="#66FFFFFF" />
+        </shape>
+    </item>
+    <!-- Semi-transparent white highlight on the top half -->
+    <item
+        android:gravity="top|fill_horizontal"
+        android:height="@dimen/aero_button_highlight_height"
+        android:left="6dp"
+        android:right="6dp"
+        android:top="3dp">
+        <shape android:shape="rectangle">
+            <corners
+                android:bottomLeftRadius="8dp"
+                android:bottomRightRadius="8dp"
+                android:topLeftRadius="22dp"
+                android:topRightRadius="22dp" />
+            <gradient
+                android:angle="270"
+                android:startColor="#CCFFFFFF"
+                android:endColor="#26FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

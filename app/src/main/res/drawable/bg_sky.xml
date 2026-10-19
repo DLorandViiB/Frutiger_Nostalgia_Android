@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sky gradient (deep blue at top fading to pale cyan) with a soft sun glow in the upper corner. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:centerY="0.45"
+                android:startColor="@color/aero_sky_deep"
+                android:centerColor="@color/aero_sky"
+                android:endColor="@color/aero_cyan_pale" />
+        </shape>
+    </item>
+    <!-- Sun / lens glow -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:centerX="0.85"
+                android:centerY="0.04"
+                android:gradientRadius="70%p"
+                android:startColor="#CCFFFFFF"
+                android:centerColor="#338FDBFF"
+                android:endColor="#008FDBFF"
+                android:type="radial" />
+        </shape>
+    </item>
+    <!-- Haze near the horizon -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="90"
+                android:centerY="0.25"
+                android:startColor="#80FFFFFF"
+                android:centerColor="#00FFFFFF"
+                android:endColor="#00FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

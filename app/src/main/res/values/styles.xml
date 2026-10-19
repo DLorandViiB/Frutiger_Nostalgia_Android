@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ===== Text appearances ===== -->
+
+    <style name="TextAppearance.Aero.Display" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/aero_text_display</item>
+        <item name="android:textColor">@color/aero_text_on_sky</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:shadowColor">@color/aero_heading_shadow</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">6</item>
+    </style>
+
+    <style name="TextAppearance.Aero.Headline" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/aero_text_headline</item>
+        <item name="android:textColor">@color/aero_text_on_sky</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:shadowColor">@color/aero_heading_shadow</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">5</item>
+    </style>
+
+    <style name="TextAppearance.Aero.Subtitle" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:textSize">@dimen/aero_text_body</item>
+        <item name="android:textColor">@color/aero_text_on_sky</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:shadowColor">@color/aero_heading_shadow</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">3</item>
+    </style>
+
+    <!-- Title inside a glass card: dark text with a white emboss -->
+    <style name="TextAppearance.Aero.Title" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/aero_text_title</item>
+        <item name="android:textColor">@color/aero_text_dark</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:shadowColor">@color/white</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="TextAppearance.Aero.Body" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:textSize">@dimen/aero_text_body</item>
+        <item name="android:textColor">@color/aero_text_dark</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.Aero.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:textSize">@dimen/aero_text_caption</item>
+        <item name="android:textColor">@color/aero_text_muted</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.Aero.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/aero_button_text</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="TextAppearance.Aero.NavLabel" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <!-- Inline field error under a text input -->
+    <style name="TextAppearance.Aero.Error" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/aero_error</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.Aero.ToolbarTitle" parent="TextAppearance.Aero.Headline">
+        <item name="android:textSize">@dimen/aero_text_title</item>
+    </style>
+
+    <!-- ===== Buttons ===== -->
+
+    <!-- Glossy pill for AppCompatButton. The layer-list selector draws everything (no tint, no elevation). -->
+    <style name="Widget.Aero.Button.Glossy" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_glossy_blue</item>
+        <item name="android:minHeight">@dimen/aero_button_height</item>
+        <item name="android:minWidth">160dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">@dimen/aero_button_padding_h</item>
+        <item name="android:paddingEnd">@dimen/aero_button_padding_h</item>
+        <item name="android:textAppearance">@style/TextAppearance.Aero.Button</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/aero_button_text</item>
+        <item name="android:shadowColor">@color/aero_heading_shadow</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">1.5</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="Widget.Aero.Button.Glossy.Green">
+        <item name="android:background">@drawable/btn_glossy_green</item>
+    </style>
+
+    <!-- Clickable text link over the sky -->
+    <style name="Widget.Aero.Button.Link" parent="Widget.AppCompat.TextView">
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:textAppearance">@style/TextAppearance.Aero.Subtitle</item>
+        <item name="android:textColor">@color/aero_text_on_sky</item>
+        <item name="android:shadowColor">@color/aero_heading_shadow</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">3</item>
+    </style>
+
+    <!-- ===== Glass card ===== -->
+
+    <!-- Apply to any ViewGroup (LinearLayout, FrameLayout, ConstraintLayout...). -->
+    <style name="Widget.Aero.Card.Glass" parent="">
+        <item name="android:background">@drawable/bg_glass_card</item>
+        <item name="android:paddingStart">@dimen/aero_card_padding</item>
+        <item name="android:paddingEnd">@dimen/aero_card_padding</item>
+        <item name="android:paddingTop">@dimen/aero_card_padding</item>
+        <!-- Extra bottom padding compensates for the drop shadow drawn inside the background -->
+        <item name="android:paddingBottom">30dp</item>
+    </style>
+
+    <!-- ===== Text input ===== -->
+
+    <style name="Widget.Aero.TextInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/aero_glass_fill_strong</item>
+        <item name="boxStrokeColor">@color/aero_input_stroke</item>
+        <item name="boxStrokeWidth">@dimen/aero_stroke_glass</item>
+        <item name="boxStrokeWidthFocused">@dimen/aero_stroke_focus</item>
+        <item name="boxCornerRadiusTopStart">@dimen/aero_radius_field</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/aero_radius_field</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/aero_radius_field</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/aero_radius_field</item>
+        <item name="hintTextColor">@color/aero_sky_deep</item>
+        <item name="android:textColorHint">@color/aero_text_muted</item>
+        <item name="hintTextAppearance">@style/TextAppearance.Aero.Caption</item>
+        <item name="errorTextColor">@color/aero_error</item>
+        <item name="boxStrokeErrorColor">@color/aero_error</item>
+        <item name="errorIconTint">@color/aero_error</item>
+        <item name="errorTextAppearance">@style/TextAppearance.Aero.Error</item>
+        <item name="endIconTint">@color/aero_sky</item>
+        <item name="startIconTint">@color/aero_sky</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Aero.TextInput</item>
+    </style>
+
+    <style name="ThemeOverlay.Aero.TextInput" parent="">
+        <item name="editTextStyle">@style/Widget.Aero.TextInput.EditText</item>
+        <item name="colorControlActivated">@color/aero_aqua</item>
+        <item name="colorPrimary">@color/aero_aqua</item>
+    </style>
+
+    <style name="Widget.Aero.TextInput.EditText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:textAppearance">@style/TextAppearance.Aero.Body</item>
+        <item name="android:textColor">@color/aero_text_dark</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+    </style>
+
+    <!-- Wrapper that paints the blue glow halo around a TextInputLayout while its field is focused. -->
+    <style name="Widget.Aero.TextInput.Glow" parent="">
+        <item name="android:background">@drawable/bg_field_glow</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:addStatesFromChildren">true</item>
+    </style>
+
+    <!-- ===== Bars ===== -->
+
+    <style name="Widget.Aero.BottomNav" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@drawable/bg_glass_bar</item>
+        <item name="backgroundTint">@null</item>
+        <item name="elevation">0dp</item>
+        <item name="itemBackground">@drawable/bg_nav_item_glow</item>
+        <item name="itemRippleColor">@color/aero_glass_fill</item>
+        <item name="itemIconSize">@dimen/aero_nav_icon</item>
+        <item name="itemTextColor">@color/aero_nav_item</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.Aero.NavLabel</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.Aero.NavLabel</item>
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+
+    <style name="Widget.Aero.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Aero.ToolbarTitle</item>
+        <item name="titleTextColor">@color/aero_text_on_sky</item>
+        <item name="titleCentered">true</item>
+    </style>
+
+    <!-- ===== Snackbar ===== -->
+
+    <!-- Glossy blue pill; the error variant swaps in @drawable/bg_snackbar_error (see AeroSnackbar.kt). -->
+    <style name="Widget.Aero.Snackbar" parent="Widget.MaterialComponents.Snackbar">
+        <item name="android:background">@drawable/bg_snackbar</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:layout_margin">@dimen/aero_spacing</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="Widget.Aero.Snackbar.TextView" parent="Widget.MaterialComponents.Snackbar.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.Aero.Body</item>
+        <item name="android:textColor">@color/aero_text_on_sky</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:shadowColor">@color/aero_heading_shadow</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
+    <!-- ===== Misc ===== -->
+
+    <style name="Widget.Aero.ProgressBar" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint">@color/aero_aqua</item>
+    </style>
+
+    <style name="Widget.Aero.Orb" parent="">
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <!-- Soft ellipse glow beneath an orb, like its reflection on glass -->
+    <style name="Widget.Aero.OrbGlow" parent="">
+        <item name="android:layout_width">@dimen/aero_orb_glow_width</item>
+        <item name="android:layout_height">@dimen/aero_orb_glow_height</item>
+        <item name="android:src">@drawable/bg_orb_glow</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+</resources>

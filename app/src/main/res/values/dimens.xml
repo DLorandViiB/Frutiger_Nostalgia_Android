@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Corners -->
+    <dimen name="aero_radius_pill">28dp</dimen>
+    <dimen name="aero_radius_card">28dp</dimen>
+    <dimen name="aero_radius_field">22dp</dimen>
+    <dimen name="aero_radius_bar">24dp</dimen>
+
+    <!-- Glossy button -->
+    <dimen name="aero_button_height">52dp</dimen>
+    <dimen name="aero_button_highlight_height">23dp</dimen>
+    <dimen name="aero_button_glow_height">14dp</dimen>
+    <dimen name="aero_button_padding_h">28dp</dimen>
+    <dimen name="aero_button_text">18sp</dimen>
+
+    <!-- Glass card -->
+    <dimen name="aero_card_padding">24dp</dimen>
+    <dimen name="aero_card_shadow_offset">6dp</dimen>
+    <dimen name="aero_card_highlight_height">56dp</dimen>
+    <dimen name="aero_card_spacing">20dp</dimen>
+
+    <!-- Strokes -->
+    <dimen name="aero_stroke_thin">1dp</dimen>
+    <dimen name="aero_stroke_glass">1.5dp</dimen>
+    <dimen name="aero_stroke_focus">2.5dp</dimen>
+
+    <!-- Layout -->
+    <dimen name="aero_gutter">24dp</dimen>
+    <dimen name="aero_spacing_small">8dp</dimen>
+    <dimen name="aero_spacing">16dp</dimen>
+    <dimen name="aero_spacing_large">32dp</dimen>
+    <dimen name="aero_form_max_width">420dp</dimen>
+    <dimen name="aero_hills_height">200dp</dimen>
+
+    <!-- Orbs -->
+    <dimen name="aero_orb_logo">112dp</dimen>
+    <dimen name="aero_orb_avatar">120dp</dimen>
+    <dimen name="aero_orb_small">64dp</dimen>
+    <dimen name="aero_orb_glow_width">96dp</dimen>
+    <dimen name="aero_orb_glow_height">18dp</dimen>
+    <dimen name="aero_nav_icon">30dp</dimen>
+
+    <!-- Type -->
+    <dimen name="aero_text_display">44sp</dimen>
+    <dimen name="aero_text_headline">30sp</dimen>
+    <dimen name="aero_text_title">22sp</dimen>
+    <dimen name="aero_text_body">16sp</dimen>
+    <dimen name="aero_text_caption">14sp</dimen>
+</resources>

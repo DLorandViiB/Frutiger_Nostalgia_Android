@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Soft elliptical glow placed beneath an orb. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <gradient
+        android:centerX="0.5"
+        android:centerY="0.5"
+        android:gradientRadius="48dp"
+        android:startColor="#B3FFFFFF"
+        android:centerColor="#40D8F6FF"
+        android:endColor="#00D8F6FF"
+        android:type="radial" />
+</shape>

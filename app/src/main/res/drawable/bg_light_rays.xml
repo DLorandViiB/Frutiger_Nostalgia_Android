@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Soft light rays fanning out from the top-right corner, plus a few lens-flare rings. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="360dp"
+    android:height="640dp"
+    android:viewportWidth="360"
+    android:viewportHeight="640">
+
+    <!-- Rays: wedges from the sun at (310, 20) -->
+    <path android:pathData="M310,20 L-40,250 L-40,330 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="-40"
+                android:endY="290"
+                android:startX="310"
+                android:startY="20"
+                android:type="linear">
+                <item android:color="#40FFFFFF" android:offset="0" />
+                <item android:color="#00FFFFFF" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:pathData="M310,20 L40,520 L120,540 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="80"
+                android:endY="530"
+                android:startX="310"
+                android:startY="20"
+                android:type="linear">
+                <item android:color="#33FFFFFF" android:offset="0" />
+                <item android:color="#00FFFFFF" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:pathData="M310,20 L-40,60 L-40,110 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="-40"
+                android:endY="85"
+                android:startX="310"
+                android:startY="20"
+                android:type="linear">
+                <item android:color="#4DFFFFFF" android:offset="0" />
+                <item android:color="#00FFFFFF" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path android:pathData="M310,20 L230,620 L300,640 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="265"
+                android:endY="630"
+                android:startX="310"
+                android:startY="20"
+                android:type="linear">
+                <item android:color="#2EFFFFFF" android:offset="0" />
+                <item android:color="#00FFFFFF" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Lens flare rings along the diagonal -->
+    <path
+        android:fillColor="#1AFFFFFF"
+        android:pathData="M236,96m-18,0a18,18 0,1 1,36 0a18,18 0,1 1,-36 0"
+        android:strokeWidth="1"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#14B6F3FF"
+        android:pathData="M190,150m-9,0a9,9 0,1 1,18 0a9,9 0,1 1,-18 0" />
+    <path
+        android:fillColor="#0FFFFFFF"
+        android:pathData="M120,232m-30,0a30,30 0,1 1,60 0a30,30 0,1 1,-60 0"
+        android:strokeWidth="1"
+        android:strokeColor="#1FFFFFFF" />
+</vector>

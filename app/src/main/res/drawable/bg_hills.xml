@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Two rolling grass hills with a white rim light, over a calm water band. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="360dp"
+    android:height="200dp"
+    android:viewportWidth="360"
+    android:viewportHeight="200">
+
+    <!-- Water band -->
+    <path android:pathData="M0,150 L360,150 L360,200 L0,200 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="0"
+                android:endY="200"
+                android:startX="0"
+                android:startY="150"
+                android:type="linear">
+                <item android:color="#FF6FD4F5" android:offset="0" />
+                <item android:color="#FF1E8FD0" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path
+        android:fillColor="#59FFFFFF"
+        android:pathData="M40,170 L150,168 L150,171 L40,173 Z M210,182 L330,180 L330,183 L210,185 Z" />
+
+    <!-- Back hill -->
+    <path android:pathData="M-10,120 C60,60 140,58 210,96 C260,122 310,100 370,72 L370,160 L-10,160 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="180"
+                android:endY="160"
+                android:startX="180"
+                android:startY="60"
+                android:type="linear">
+                <item android:color="#FF8BD43A" android:offset="0" />
+                <item android:color="#FF3FA82B" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path
+        android:pathData="M-10,120 C60,60 140,58 210,96 C260,122 310,100 370,72"
+        android:strokeWidth="2"
+        android:strokeColor="#99FFFFFF" />
+
+    <!-- Front hill -->
+    <path android:pathData="M-10,150 C50,110 120,104 180,126 C230,144 290,140 370,118 L370,165 L-10,165 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="180"
+                android:endY="165"
+                android:startX="180"
+                android:startY="104"
+                android:type="linear">
+                <item android:color="#FFB4EC5A" android:offset="0" />
+                <item android:color="#FF4BAE24" android:offset="0.6" />
+                <item android:color="#FF1E7A1E" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path
+        android:pathData="M-10,150 C50,110 120,104 180,126 C230,144 290,140 370,118"
+        android:strokeWidth="2.5"
+        android:strokeColor="#B3FFFFFF" />
+
+    <!-- Glossy sheen on the front hill -->
+    <path android:pathData="M40,132 C80,116 130,114 170,128 C130,124 85,126 40,140 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="170"
+                android:endY="132"
+                android:startX="40"
+                android:startY="132"
+                android:type="linear">
+                <item android:color="#00FFFFFF" android:offset="0" />
+                <item android:color="#80FFFFFF" android:offset="0.5" />
+                <item android:color="#00FFFFFF" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+</vector>

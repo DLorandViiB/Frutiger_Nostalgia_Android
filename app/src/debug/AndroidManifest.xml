@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Merged into the main manifest for debug builds only. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Android 17+ blocks apps from private-range addresses such as the emulator's 10.0.2.2 host alias
+         unless this runtime permission is granted (MainActivity requests it in debug builds). -->
+    <uses-permission android:name="android.permission.ACCESS_LOCAL_NETWORK" />
+
+    <application android:networkSecurityConfig="@xml/network_security_config" />
+
+</manifest>

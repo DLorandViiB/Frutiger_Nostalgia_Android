@@ -1,14 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    tools:background="@drawable/bg_sky"
     tools:context=".ui.home.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/aero_gutter">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_welcome_title"
+            android:textAppearance="@style/TextAppearance.Aero.Headline" />
+
+        <!-- Welcome card -->
+        <LinearLayout
+            style="@style/Widget.Aero.Card.Glass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/aero_spacing"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                style="@style/Widget.Aero.Orb"
+                android:layout_width="@dimen/aero_orb_small"
+                android:layout_height="@dimen/aero_orb_small"
+                android:contentDescription="@string/cd_home_orb"
+                android:src="@drawable/ic_orb_logo" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/aero_spacing"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textAppearance="@style/TextAppearance.Aero.Title" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/home_welcome_body"
+                    android:textAppearance="@style/TextAppearance.Aero.Body" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Generic placeholder content card -->
+        <LinearLayout
+            style="@style/Widget.Aero.Card.Glass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/aero_card_spacing"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/home_today_title"
+                android:textAppearance="@style/TextAppearance.Aero.Title" />
+
+            <ImageView
+                style="@style/Widget.Aero.Orb"
+                android:layout_width="@dimen/aero_orb_small"
+                android:layout_height="@dimen/aero_orb_small"
+                android:layout_marginTop="@dimen/aero_spacing"
+                android:importantForAccessibility="no"
+                android:src="@drawable/bubble" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/aero_spacing_small"
+                android:gravity="center"
+                android:text="@string/home_today_empty"
+                android:textAppearance="@style/TextAppearance.Aero.Caption" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
