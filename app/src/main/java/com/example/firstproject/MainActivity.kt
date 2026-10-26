@@ -14,6 +14,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
 import androidx.core.view.updatePadding
+import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -26,6 +27,11 @@ class MainActivity : AppCompatActivity() {
 
     // Destinations shown without the toolbar and bottom navigation
     private val authDestinations = setOf(R.id.loginFragment, R.id.registerFragment)
+
+    // Top-level tabs: the only destinations with the bottom nav. Sub-screens (forms) get the toolbar's Up arrow.
+    private val topLevelDestinations = setOf(R.id.homeFragment, R.id.profileFragment)
+
+    private lateinit var navController: NavController
 
     private val localNetworkPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
@@ -47,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 // Get NavController from NavHostFragment
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        val navController = navHostFragment.navController
+        navController = navHostFragment.navController
         // Skip login when a token is already saved. On recreation setGraph restores the saved back stack.
         val navGraph = navController.navInflater.inflate(R.navigation.nav_graph).apply {
             setStartDestination(
@@ -57,20 +63,17 @@ class MainActivity : AppCompatActivity() {
         }
         navController.setGraph(navGraph, null)
 // Define top-level destinations for ActionBar
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.homeFragment, R.id.profileFragment)
-        )
+        val appBarConfiguration = AppBarConfiguration(topLevelDestinations)
         setupActionBarWithNavController(navController, appBarConfiguration)
 // Hook up BottomNavigationView via binding
         binding.bottomNav.setupWithNavController(navController)
         // Keep the glossy orb icons' own colours (a null tint can't be set from a style)
         binding.bottomNav.itemIconTintList = null
 
-        // Hide the toolbar and bottom nav on the auth screens
+        // Auth screens: no toolbar or bottom nav. Sub-screens: toolbar (with Up) but no bottom nav.
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            val showChrome = destination.id !in authDestinations
-            binding.toolbar.isVisible = showChrome
-            binding.bottomNav.isVisible = showChrome
+            binding.toolbar.isVisible = destination.id !in authDestinations
+            binding.bottomNav.isVisible = destination.id in topLevelDestinations
             ViewCompat.requestApplyInsets(binding.contentRoot)
         }
 
@@ -90,6 +93,9 @@ class MainActivity : AppCompatActivity() {
 
         Log.d(TAG, "onCreate: MainActivity called.")
     }
+
+    override fun onSupportNavigateUp(): Boolean =
+        navController.navigateUp() || super.onSupportNavigateUp()
 
     /**
      * Android 17 (API 37) blocks private-range addresses like the emulator's 10.0.2.2 unless the app holds

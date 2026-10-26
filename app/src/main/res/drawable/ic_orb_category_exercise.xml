@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Exercise category: orange glass orb with a dumbbell. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <group>
+        <!-- Orb body: radial light from below, darker towards the rim -->
+        <path
+            android:pathData="M48,48m-44,0a44,44 0,1 1,88 0a44,44 0,1 1,-88 0"
+            android:strokeWidth="1.5"
+            android:strokeColor="#99A3470A">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:centerX="48"
+                    android:centerY="70"
+                    android:gradientRadius="60"
+                    android:type="radial">
+                    <item android:color="#FFFFE7B3" android:offset="0" />
+                    <item android:color="#FFFF9A2E" android:offset="0.55" />
+                    <item android:color="#FFC2570A" android:offset="1" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <!-- Glyph drop shadow -->
+        <group android:translateX="0" android:translateY="1.5">
+        <path
+            android:fillColor="#590A3557"
+            android:pathData="M32,45 H64 A2,2 0 0 1 66,47 V49 A2,2 0 0 1 64,51 H32 A2,2 0 0 1 30,49 V47 A2,2 0 0 1 32,45 Z" />
+        <path
+            android:fillColor="#590A3557"
+            android:pathData="M21,38 H22 A3,3 0 0 1 25,41 V55 A3,3 0 0 1 22,58 H21 A3,3 0 0 1 18,55 V41 A3,3 0 0 1 21,38 Z" />
+        <path
+            android:fillColor="#590A3557"
+            android:pathData="M29,32 H31 A3,3 0 0 1 34,35 V61 A3,3 0 0 1 31,64 H29 A3,3 0 0 1 26,61 V35 A3,3 0 0 1 29,32 Z" />
+        <path
+            android:fillColor="#590A3557"
+            android:pathData="M65,32 H67 A3,3 0 0 1 70,35 V61 A3,3 0 0 1 67,64 H65 A3,3 0 0 1 62,61 V35 A3,3 0 0 1 65,32 Z" />
+        <path
+            android:fillColor="#590A3557"
+            android:pathData="M74,38 H75 A3,3 0 0 1 78,41 V55 A3,3 0 0 1 75,58 H74 A3,3 0 0 1 71,55 V41 A3,3 0 0 1 74,38 Z" />
+        </group>
+        <!-- Glyph -->
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M32,45 H64 A2,2 0 0 1 66,47 V49 A2,2 0 0 1 64,51 H32 A2,2 0 0 1 30,49 V47 A2,2 0 0 1 32,45 Z" />
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M21,38 H22 A3,3 0 0 1 25,41 V55 A3,3 0 0 1 22,58 H21 A3,3 0 0 1 18,55 V41 A3,3 0 0 1 21,38 Z" />
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M29,32 H31 A3,3 0 0 1 34,35 V61 A3,3 0 0 1 31,64 H29 A3,3 0 0 1 26,61 V35 A3,3 0 0 1 29,32 Z" />
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M65,32 H67 A3,3 0 0 1 70,35 V61 A3,3 0 0 1 67,64 H65 A3,3 0 0 1 62,61 V35 A3,3 0 0 1 65,32 Z" />
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M74,38 H75 A3,3 0 0 1 78,41 V55 A3,3 0 0 1 75,58 H74 A3,3 0 0 1 71,55 V41 A3,3 0 0 1 74,38 Z" />
+        <!-- Specular cap highlight -->
+        <path android:pathData="M48,7 C66,7 79,17 79,29 C79,40 65,46 48,46 C31,46 17,40 17,29 C17,17 30,7 48,7 Z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:endX="48"
+                    android:endY="46"
+                    android:startX="48"
+                    android:startY="7"
+                    android:type="linear">
+                    <item android:color="#F2FFFFFF" android:offset="0" />
+                    <item android:color="#14FFFFFF" android:offset="1" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <!-- Bottom rim light -->
+        <path
+            android:pathData="M24,76 C34,86 62,86 72,76"
+            android:strokeLineCap="round"
+            android:strokeWidth="2"
+            android:strokeColor="#66FFFFFF" />
+    </group>
+</vector>

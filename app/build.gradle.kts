@@ -31,6 +31,8 @@ android {
         }
     }
     compileOptions {
+        // java.time (Instant, ZonedDateTime, DateTimeFormatter) is only built in from API 26; minSdk is 24
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
@@ -67,4 +69,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
+    // Lists
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.swiperefreshlayout)
+
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
 }

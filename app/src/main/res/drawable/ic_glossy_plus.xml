@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- White "+" glyph with a soft drop shadow, drawn on top of the glossy round button. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportWidth="28"
+    android:viewportHeight="28">
+    <group android:translateY="1">
+        <path
+            android:pathData="M14,5 V23 M5,14 H23"
+            android:strokeColor="#662A6E12"
+            android:strokeLineCap="round"
+            android:strokeWidth="4.5" />
+    </group>
+    <path
+        android:pathData="M14,5 V23 M5,14 H23"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeLineCap="round"
+        android:strokeWidth="4.5" />
+</vector>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Study category: indigo glass orb with a graduation cap. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <group>
+        <!-- Orb body: radial light from below, darker towards the rim -->
+        <path
+            android:pathData="M48,48m-44,0a44,44 0,1 1,88 0a44,44 0,1 1,-88 0"
+            android:strokeWidth="1.5"
+            android:strokeColor="#99223590">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:centerX="48"
+                    android:centerY="70"
+                    android:gradientRadius="60"
+                    android:type="radial">
+                    <item android:color="#FFDCE4FF" android:offset="0" />
+                    <item android:color="#FF5A7BEA" android:offset="0.55" />
+                    <item android:color="#FF2A3FB0" android:offset="1" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <!-- Glyph drop shadow -->
+        <group android:translateX="0" android:translateY="1.5">
+        <path
+            android:fillColor="#590A3557"
+            android:pathData="M48,27 L79,40 L48,53 L17,40 Z" />
+        <path
+            android:fillColor="#590A3557"
+            android:pathData="M31,47 L31,59 C31,65 40,69 48,69 C56,69 65,65 65,59 L65,47 L48,54.5 Z" />
+        <path
+            android:pathData="M73,43 L73,58"
+            android:strokeColor="#590A3557"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:strokeWidth="2.5" />
+        <path
+            android:fillColor="#590A3557"
+            android:pathData="M73,61m-3.5,0a3.5,3.5 0,1 1,7,0a3.5,3.5 0,1 1,-7,0" />
+        </group>
+        <!-- Glyph -->
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M48,27 L79,40 L48,53 L17,40 Z" />
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M31,47 L31,59 C31,65 40,69 48,69 C56,69 65,65 65,59 L65,47 L48,54.5 Z" />
+        <path
+            android:pathData="M73,43 L73,58"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:strokeWidth="2.5" />
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M73,61m-3.5,0a3.5,3.5 0,1 1,7,0a3.5,3.5 0,1 1,-7,0" />
+        <!-- Specular cap highlight -->
+        <path android:pathData="M48,7 C66,7 79,17 79,29 C79,40 65,46 48,46 C31,46 17,40 17,29 C17,17 30,7 48,7 Z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:endX="48"
+                    android:endY="46"
+                    android:startX="48"
+                    android:startY="7"
+                    android:type="linear">
+                    <item android:color="#F2FFFFFF" android:offset="0" />
+                    <item android:color="#14FFFFFF" android:offset="1" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <!-- Bottom rim light -->
+        <path
+            android:pathData="M24,76 C34,86 62,86 72,76"
+            android:strokeLineCap="round"
+            android:strokeWidth="2"
+            android:strokeColor="#66FFFFFF" />
+    </group>
+</vector>

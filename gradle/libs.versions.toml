@@ -14,6 +14,9 @@ retrofit = "3.0.0"
 okhttp-logging = "4.12.0"
 lifecycle = "2.9.4"
 coroutines = "1.10.2"
+recyclerview = "1.4.0"
+swiperefreshlayout = "1.2.0"
+desugarJdkLibs = "2.1.5"
 
 
 [libraries]
@@ -42,6 +45,13 @@ androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-lived
 
 # Kotlin Coroutines
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+
+# Lists
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
+
+# java.time on API < 26 (minSdk 24)
+desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugarJdkLibs" }
 
 
 

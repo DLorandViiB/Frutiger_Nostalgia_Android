@@ -190,6 +190,24 @@
         <item name="android:paddingEnd">20dp</item>
     </style>
 
+    <!-- Read-only dropdown / picker field inside a Widget.Aero.TextInput (opens a menu or picker, no keyboard) -->
+    <style name="Widget.Aero.TextInput.AutoComplete" parent="Widget.MaterialComponents.AutoCompleteTextView.OutlinedBox">
+        <item name="android:textAppearance">@style/TextAppearance.Aero.Body</item>
+        <item name="android:textColor">@color/aero_text_dark</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:inputType">none</item>
+    </style>
+
+    <!-- Text field that only opens a date/time picker when tapped (no keyboard, no cursor) -->
+    <style name="Widget.Aero.TextInput.PickerField" parent="Widget.Aero.TextInput.EditText">
+        <item name="android:inputType">none</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">true</item>
+        <item name="android:longClickable">false</item>
+        <item name="android:cursorVisible">false</item>
+    </style>
+
     <!-- Wrapper that paints the blue glow halo around a TextInputLayout while its field is focused. -->
     <style name="Widget.Aero.TextInput.Glow" parent="">
         <item name="android:background">@drawable/bg_field_glow</item>
@@ -217,6 +235,11 @@
         <item name="titleTextAppearance">@style/TextAppearance.Aero.ToolbarTitle</item>
         <item name="titleTextColor">@color/aero_text_on_sky</item>
         <item name="titleCentered">true</item>
+    </style>
+
+    <!-- Toolbar Up arrow (NavigationUI draws it as a DrawerArrowDrawable, which ignores navigationIconTint) -->
+    <style name="Widget.Aero.DrawerArrow" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/aero_text_on_sky</item>
     </style>
 
     <!-- ===== Snackbar ===== -->
@@ -249,6 +272,160 @@
     <style name="Widget.Aero.Orb" parent="">
         <item name="android:scaleType">fitCenter</item>
         <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <!-- Selectable category orb in the AddHabit grid (bg_category_tile highlights the selected one) -->
+    <style name="Widget.Aero.CategoryTile" parent="">
+        <item name="android:background">@drawable/bg_category_tile</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingStart">2dp</item>
+        <item name="android:paddingEnd">2dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <!-- Field group label inside a glass card -->
+    <style name="TextAppearance.Aero.Label" parent="TextAppearance.Aero.Body">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/aero_sky_deep</item>
+    </style>
+
+    <!-- ===== Material date & time pickers (set as materialCalendarTheme / materialTimePickerTheme) ===== -->
+
+    <!-- Rounded corners like the glass cards -->
+    <style name="ShapeAppearance.Aero.Dialog" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/aero_radius_card</item>
+    </style>
+
+    <style name="ShapeAppearance.Aero.Chip" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="ThemeOverlay.Aero.MaterialCalendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorPrimary">@color/aero_sky</item>
+        <item name="colorPrimaryVariant">@color/aero_sky_deep</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSurface">@color/aero_cyan_pale</item>
+        <item name="colorOnSurface">@color/aero_text_dark</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Aero.Dialog</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Aero.Dialog</item>
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="fontFamily">@font/nunito</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Aero.Picker.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Aero.Picker.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Aero.Picker.Headline6</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Aero.Picker.Subtitle2</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Aero.Picker.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Aero.Picker.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Aero.Picker.Overline</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Aero.Picker.Button</item>
+    </style>
+
+    <style name="ThemeOverlay.Aero.TimePicker" parent="ThemeOverlay.MaterialComponents.TimePicker">
+        <item name="colorPrimary">@color/aero_sky</item>
+        <item name="colorPrimaryVariant">@color/aero_sky_deep</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSurface">@color/aero_cyan_pale</item>
+        <item name="colorOnSurface">@color/aero_text_dark</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Aero.Dialog</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Aero.Dialog</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Aero.Chip</item>
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="fontFamily">@font/nunito</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Aero.Picker.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Aero.Picker.Headline3</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Aero.Picker.Subtitle2</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Aero.Picker.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Aero.Picker.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Aero.Picker.Overline</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Aero.Picker.Button</item>
+    </style>
+
+    <!-- Material's picker text appearances, switched to Nunito -->
+    <style name="TextAppearance.Aero.Picker.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:fontFamily">@font/nunito</item>
+    </style>
+    <style name="TextAppearance.Aero.Picker.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:fontFamily">@font/nunito</item>
+    </style>
+    <style name="TextAppearance.Aero.Picker.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextAppearance.Aero.Picker.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextAppearance.Aero.Picker.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:fontFamily">@font/nunito</item>
+    </style>
+    <style name="TextAppearance.Aero.Picker.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:fontFamily">@font/nunito</item>
+    </style>
+    <style name="TextAppearance.Aero.Picker.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:fontFamily">@font/nunito</item>
+    </style>
+    <style name="TextAppearance.Aero.Picker.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:fontFamily">@font/nunito</item>
+    </style>
+    <style name="TextAppearance.Aero.Picker.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextAppearance.Aero.Picker.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/nunito</item>
+        <item name="android:fontFamily">@font/nunito</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Compact glass card for list rows -->
+    <style name="Widget.Aero.Card.Glass.ListItem">
+        <item name="android:paddingStart">@dimen/aero_list_card_padding</item>
+        <item name="android:paddingEnd">@dimen/aero_list_card_padding</item>
+        <item name="android:paddingTop">@dimen/aero_list_card_padding</item>
+        <!-- + aero_card_shadow_offset for the shadow drawn inside the background -->
+        <item name="android:paddingBottom">22dp</item>
+    </style>
+
+    <!-- Small glossy status pill; the background (bg_pill_*) is chosen per status in code -->
+    <style name="Widget.Aero.Pill" parent="">
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">3dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textAppearance">@style/TextAppearance.Aero.NavLabel</item>
+        <item name="android:textColor">@color/aero_text_on_sky</item>
+        <item name="android:shadowColor">@color/aero_heading_shadow</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1.5</item>
+    </style>
+
+    <!-- Glossy round floating action button (draws itself; no Material FAB tint/elevation) -->
+    <style name="Widget.Aero.Fab" parent="">
+        <item name="android:layout_width">@dimen/aero_fab_size</item>
+        <item name="android:layout_height">@dimen/aero_fab_size</item>
+        <item name="android:background">@drawable/btn_glossy_round_green</item>
+        <item name="android:src">@drawable/ic_glossy_plus</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:stateListAnimator">@null</item>
     </style>
 
     <!-- Soft ellipse glow beneath an orb, like its reflection on glass -->

@@ -23,10 +23,81 @@
     <string name="link_go_to_login">Already have an account? <b>Log in</b></string>
 
     <!-- Home -->
-    <string name="home_welcome_title">Welcome back!</string>
-    <string name="home_welcome_body">Good to see you. Your content will show up right here.</string>
-    <string name="home_today_title">Getting started</string>
-    <string name="home_today_empty">Nothing here yet. New items will appear in this card.</string>
+    <string name="home_greeting_morning">Good morning</string>
+    <string name="home_greeting_afternoon">Good afternoon</string>
+    <string name="home_greeting_evening">Good evening</string>
+    <string name="home_greeting_with_name">%1$s,</string>
+    <string name="home_greeting_without_name">%1$s!</string>
+    <plurals name="home_summary">
+        <item quantity="one">%1$d habit today · %2$d done</item>
+        <item quantity="other">%1$d habits today · %2$d done</item>
+    </plurals>
+    <string name="home_empty_title">Nothing scheduled today</string>
+    <string name="home_empty_body">Enjoy the free time, or tap + to plan a new habit.</string>
+    <string name="home_error_title">Couldn\'t load today\'s schedule</string>
+    <string name="action_retry">Try again</string>
+    <string name="session_expired">Your session has expired. Please log in again.</string>
+
+    <!-- Add habit -->
+    <string name="title_add_habit">New habit</string>
+    <string name="add_habit_subtitle">What would you like to build into your days?</string>
+    <string name="hint_habit_name">Habit name</string>
+    <string name="hint_habit_description">Description (optional)</string>
+    <string name="hint_habit_goal">Goal</string>
+    <string name="helper_habit_goal">e.g. Run a half marathon in spring</string>
+    <string name="label_category">Category</string>
+    <string name="categories_load_failed">Couldn\'t load categories.</string>
+    <string name="action_create_habit">Create &amp; schedule</string>
+    <string name="link_schedule_existing">Schedule an <b>existing habit</b> instead</string>
+    <string name="habit_created">Habit created. Now pick when to do it.</string>
+    <string name="error_required_habit_name">Please give the habit a name.</string>
+    <string name="error_required_goal">Please describe your goal.</string>
+    <string name="error_required_category">Please choose a category.</string>
+
+    <!-- Create schedule -->
+    <string name="title_create_schedule">Schedule habit</string>
+    <string name="create_schedule_subtitle">Pick when and how often.</string>
+    <string name="hint_habit">Habit</string>
+    <string name="habits_load_failed">Couldn\'t load your habits.</string>
+    <string name="habits_empty">You don\'t have any habits yet. Create one first.</string>
+    <string name="action_create_one">Create a habit</string>
+    <string name="loading">Loading…</string>
+    <string name="hint_repeat">Repeat</string>
+    <string name="repeat_none">Just once</string>
+    <string name="repeat_daily">Every day</string>
+    <string name="repeat_weekdays">Weekdays (Mon–Fri)</string>
+    <string name="repeat_weekends">Weekends (Sat–Sun)</string>
+    <string name="hint_date">Date</string>
+    <string name="helper_date_repeating">Repeating schedules always start today.</string>
+    <string name="hint_start_time">Start time</string>
+    <string name="hint_duration">Duration</string>
+    <string name="suffix_minutes">min</string>
+    <string name="hint_repeat_days">Days ahead</string>
+    <string name="helper_repeat_days">How many days from today to fill in. 30 with Weekdays ≈ 22 sessions.</string>
+    <string name="hint_notes">Notes (optional)</string>
+    <string name="action_create_schedule">Create schedule</string>
+    <string name="pick_date_title">Schedule date</string>
+    <string name="pick_time_title">Start time</string>
+    <plurals name="schedule_created">
+        <item quantity="one">Scheduled %1$s (%2$d session).</item>
+        <item quantity="other">Scheduled %1$s (%2$d sessions).</item>
+    </plurals>
+    <string name="error_schedule_no_matches">No day in that range matches the pattern. Add more days ahead.</string>
+    <string name="error_required_habit">Please choose a habit.</string>
+    <string name="error_duration_range">Enter a duration between %1$d and %2$d minutes.</string>
+    <string name="error_repeat_days_range">Enter between %1$d and %2$d days.</string>
+    <string name="error_date_past">Pick today or a later date.</string>
+    <string name="error_time_utc_window">Pick %1$s–%2$s. The server files days in UTC.</string>
+
+    <!-- Schedule item -->
+    <string name="schedule_time_range">%1$s–%2$s</string>
+    <string name="schedule_time_unknown">Time not set</string>
+    <string name="schedule_untitled">Untitled habit</string>
+    <string name="schedule_category_unknown">Uncategorised</string>
+    <string name="status_planned">Planned</string>
+    <string name="status_completed">Completed</string>
+    <string name="status_skipped">Skipped</string>
+    <string name="status_unknown">Unknown</string>
 
     <!-- Profile -->
     <string name="profile_username_placeholder">Username</string>
@@ -58,9 +129,14 @@
     <string name="error_timeout">The server is taking too long to respond. Please try again.</string>
     <string name="error_no_connection">Can\'t reach the server. Check your connection and try again.</string>
     <string name="error_unexpected">Something went wrong. Please try again.</string>
+    <string name="error_request_rejected">The server rejected these details. Please check them and try again.</string>
+    <string name="error_rejected_with_reason">The server rejected this: %1$s</string>
+    <string name="error_not_found">That item no longer exists.</string>
+    <string name="error_with_reason">%1$s %2$s</string>
 
     <!-- Accessibility -->
     <string name="cd_logo">App logo</string>
     <string name="cd_avatar">Profile picture</string>
-    <string name="cd_home_orb">Home</string>
+    <string name="cd_add_habit">Add a habit</string>
+    <string name="cd_schedule_item">%1$s, %2$s, %3$s, %4$s</string>
 </resources>

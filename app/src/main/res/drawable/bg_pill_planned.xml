@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Status pill for Planned schedules: glossy blue. Layers: dark rim, gradient body, top-half specular highlight. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/aero_radius_pill" />
+            <solid android:color="@color/aero_stroke_blue" />
+        </shape>
+    </item>
+    <item
+        android:bottom="1dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/aero_radius_pill" />
+            <gradient
+                android:angle="270"
+                android:centerY="0.55"
+                android:startColor="@color/aero_btn_blue_top"
+                android:centerColor="@color/aero_btn_blue_mid"
+                android:endColor="@color/aero_btn_blue_bottom" />
+        </shape>
+    </item>
+    <item
+        android:gravity="top|fill_horizontal"
+        android:height="@dimen/aero_pill_highlight_height"
+        android:left="3dp"
+        android:right="3dp"
+        android:top="1.5dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/aero_radius_pill" />
+            <gradient
+                android:angle="270"
+                android:startColor="#CCFFFFFF"
+                android:endColor="#1AFFFFFF" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One schedule on Home: category orb, habit name, time range, category, optional notes and a status pill.
+     The row is read as one unit by screen readers (contentDescription is set in HomeScheduleAdapter). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Aero.Card.Glass.ListItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/aero_spacing_small"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    tools:background="@drawable/bg_glass_card">
+
+    <ImageView
+        android:id="@+id/ivCategory"
+        style="@style/Widget.Aero.Orb"
+        android:layout_width="@dimen/aero_orb_list"
+        android:layout_height="@dimen/aero_orb_list"
+        android:importantForAccessibility="no"
+        tools:src="@drawable/ic_orb_category_running" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/aero_spacing"
+        android:layout_weight="1"
+        android:importantForAccessibility="noHideDescendants"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textAppearance="@style/TextAppearance.Aero.Title"
+                android:textSize="@dimen/aero_text_body"
+                tools:text="Morning Run" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                style="@style/Widget.Aero.Pill"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/aero_spacing_small"
+                tools:background="@drawable/bg_pill_planned"
+                tools:text="Planned" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textAppearance="@style/TextAppearance.Aero.Body"
+            android:textColor="@color/aero_sky_deep"
+            android:textStyle="bold"
+            tools:text="07:15–07:50" />
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Aero.Caption"
+            tools:text="Running" />
+
+        <TextView
+            android:id="@+id/tvNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textAppearance="@style/TextAppearance.Aero.Body"
+            android:textSize="@dimen/aero_text_caption"
+            android:textStyle="italic"
+            android:visibility="gone"
+            tools:text="Keep the pace conversational"
+            tools:visibility="visible" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    tools:background="@drawable/bg_sky"
+    tools:context=".ui.habit.AddHabitFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/aero_gutter"
+        android:paddingEnd="@dimen/aero_gutter"
+        android:paddingBottom="@dimen/aero_gutter">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/add_habit_subtitle"
+            android:textAppearance="@style/TextAppearance.Aero.Subtitle" />
+
+        <LinearLayout
+            style="@style/Widget.Aero.Card.Glass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/aero_spacing"
+            android:orientation="vertical">
+
+            <FrameLayout
+                style="@style/Widget.Aero.TextInput.Glow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_habit_name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapSentences" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/Widget.Aero.TextInput.Glow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/aero_spacing_small">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_habit_description">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:maxLines="4" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/Widget.Aero.TextInput.Glow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/aero_spacing_small">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilGoal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_habit_goal"
+                    app:helperText="@string/helper_habit_goal">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etGoal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapSentences" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="@dimen/aero_spacing"
+                android:labelFor="@id/rvCategories"
+                android:text="@string/label_category"
+                android:textAppearance="@style/TextAppearance.Aero.Label" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/aero_spacing_small"
+                android:minHeight="80dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCategories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="4"
+                    tools:itemCount="7"
+                    tools:listitem="@layout/item_category_tile" />
+
+                <ProgressBar
+                    android:id="@+id/progressCategories"
+                    style="@style/Widget.Aero.ProgressBar"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/groupCategoriesError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvCategoriesError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.Aero.Caption"
+                        tools:text="@string/categories_load_failed" />
+
+                    <TextView
+                        android:id="@+id/btnRetryCategories"
+                        style="@style/Widget.Aero.Button.Link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/action_retry"
+                        android:textColor="@color/aero_sky_deep"
+                        android:textStyle="bold"
+                        android:shadowRadius="0" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvCategoryError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/error_required_category"
+                android:textAppearance="@style/TextAppearance.Aero.Error"
+                android:visibility="gone" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/aero_card_spacing">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCreateHabit"
+                    style="@style/Widget.Aero.Button.Glossy.Green"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/action_create_habit" />
+
+                <ProgressBar
+                    android:id="@+id/progressCreate"
+                    style="@style/Widget.Aero.ProgressBar"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvScheduleExisting"
+            style="@style/Widget.Aero.Button.Link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/aero_spacing_small"
+            android:text="@string/link_schedule_existing" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

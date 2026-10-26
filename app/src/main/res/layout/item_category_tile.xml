@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One category in the AddHabit picker: orb + name. Selection is shown by bg_category_tile. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Aero.CategoryTile"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp">
+
+    <ImageView
+        android:id="@+id/ivOrb"
+        style="@style/Widget.Aero.Orb"
+        android:layout_width="@dimen/aero_orb_tile"
+        android:layout_height="@dimen/aero_orb_tile"
+        android:importantForAccessibility="no"
+        tools:src="@drawable/ic_orb_category_running" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:importantForAccessibility="no"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.Aero.Caption"
+        android:textColor="@color/aero_text_dark"
+        android:textSize="12sp"
+        tools:text="Hydration" />
+</LinearLayout>

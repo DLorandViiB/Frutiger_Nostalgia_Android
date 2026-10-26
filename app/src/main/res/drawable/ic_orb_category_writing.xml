@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Writing category: pink glass orb with a pencil. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <group>
+        <!-- Orb body: radial light from below, darker towards the rim -->
+        <path
+            android:pathData="M48,48m-44,0a44,44 0,1 1,88 0a44,44 0,1 1,-88 0"
+            android:strokeWidth="1.5"
+            android:strokeColor="#99901A4E">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:centerX="48"
+                    android:centerY="70"
+                    android:gradientRadius="60"
+                    android:type="radial">
+                    <item android:color="#FFFFE2F1" android:offset="0" />
+                    <item android:color="#FFF0609E" android:offset="0.55" />
+                    <item android:color="#FFB0205E" android:offset="1" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <!-- Glyph drop shadow -->
+        <group android:translateX="0" android:translateY="1.5">
+        <group android:pivotX="48" android:pivotY="48" android:rotation="-45">
+            <path
+                android:fillColor="#590A3557"
+                android:pathData="M29,42 H62 L75,48 L62,54 H29 Z" />
+            <path
+                android:fillColor="#590A3557"
+                android:pathData="M27,42 V54 H23 A3,3 0 0 1 20,51 V45 A3,3 0 0 1 23,42 Z" />
+        </group>
+        </group>
+        <!-- Glyph -->
+        <group android:pivotX="48" android:pivotY="48" android:rotation="-45">
+            <path
+                android:fillColor="#FFFFFFFF"
+                android:pathData="M29,42 H62 L75,48 L62,54 H29 Z" />
+            <path
+                android:fillColor="#FFFFFFFF"
+                android:pathData="M27,42 V54 H23 A3,3 0 0 1 20,51 V45 A3,3 0 0 1 23,42 Z" />
+            <path
+                android:fillColor="#FFB0205E"
+                android:pathData="M70.5,45.9 L75,48 L70.5,50.1 Z" />
+        </group>
+        <!-- Specular cap highlight -->
+        <path android:pathData="M48,7 C66,7 79,17 79,29 C79,40 65,46 48,46 C31,46 17,40 17,29 C17,17 30,7 48,7 Z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:endX="48"
+                    android:endY="46"
+                    android:startX="48"
+                    android:startY="7"
+                    android:type="linear">
+                    <item android:color="#F2FFFFFF" android:offset="0" />
+                    <item android:color="#14FFFFFF" android:offset="1" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <!-- Bottom rim light -->
+        <path
+            android:pathData="M24,76 C34,86 62,86 72,76"
+            android:strokeLineCap="round"
+            android:strokeWidth="2"
+            android:strokeColor="#66FFFFFF" />
+    </group>
+</vector>

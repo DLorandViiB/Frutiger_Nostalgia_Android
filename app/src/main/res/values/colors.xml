@@ -40,6 +40,9 @@
     <color name="aero_stroke_disabled">#FF8299AD</color>
     <color name="aero_bottom_glow_blue">#9900FFFF</color>
     <color name="aero_bottom_glow_green">#99E8FF7A</color>
+    <color name="aero_pill_muted_top">#FFD3DEE8</color>
+    <color name="aero_pill_muted_mid">#FF7F95AB</color>
+    <color name="aero_pill_muted_bottom">#FFA3B6C8</color>
 
     <!-- Errors -->
     <color name="aero_error">#FFD32F45</color>

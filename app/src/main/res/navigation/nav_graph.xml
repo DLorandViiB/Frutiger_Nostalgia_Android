@@ -13,7 +13,46 @@
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addHabitFragment"
+            app:destination="@id/addHabitFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/addHabitFragment"
+        android:name="com.example.firstproject.ui.habit.AddHabitFragment"
+        android:label="@string/title_add_habit"
+        tools:layout="@layout/fragment_add_habit">
+        <!-- A new habit goes straight to scheduling; Back from there returns to Home, not the filled form -->
+        <action
+            android:id="@+id/action_addHabitFragment_to_createScheduleFragment"
+            app:destination="@id/createScheduleFragment"
+            app:popUpTo="@id/addHabitFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/createScheduleFragment"
+        android:name="com.example.firstproject.ui.schedule.CreateScheduleFragment"
+        android:label="@string/title_create_schedule"
+        tools:layout="@layout/fragment_create_schedule">
+        <!-- Habit to preselect; -1 lets the user pick one of their existing habits -->
+        <argument
+            android:name="habitId"
+            android:defaultValue="-1L"
+            app:argType="long" />
+        <!-- No habits yet: swap to the AddHabit form -->
+        <action
+            android:id="@+id/action_createScheduleFragment_to_addHabitFragment"
+            app:destination="@id/addHabitFragment"
+            app:popUpTo="@id/createScheduleFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Session expired (refresh token rejected): back to login with an empty back stack -->
+    <action
+        android:id="@+id/action_global_loginFragment"
+        app:destination="@id/loginFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.firstproject.ui.auth.LoginFragment"

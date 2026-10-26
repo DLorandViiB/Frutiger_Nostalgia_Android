@@ -31,7 +31,10 @@
         <item name="textInputStyle">@style/Widget.Aero.TextInput</item>
         <item name="bottomNavigationStyle">@style/Widget.Aero.BottomNav</item>
         <item name="toolbarStyle">@style/Widget.Aero.Toolbar</item>
+        <item name="drawerArrowStyle">@style/Widget.Aero.DrawerArrow</item>
         <item name="snackbarStyle">@style/Widget.Aero.Snackbar</item>
         <item name="snackbarTextViewStyle">@style/Widget.Aero.Snackbar.TextView</item>
+        <item name="materialCalendarTheme">@style/ThemeOverlay.Aero.MaterialCalendar</item>
+        <item name="materialTimePickerTheme">@style/ThemeOverlay.Aero.TimePicker</item>
     </style>
 </resources>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    tools:background="@drawable/bg_sky"
+    tools:context=".ui.schedule.CreateScheduleFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/aero_gutter"
+        android:paddingEnd="@dimen/aero_gutter"
+        android:paddingBottom="@dimen/aero_gutter">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/create_schedule_subtitle"
+            android:textAppearance="@style/TextAppearance.Aero.Subtitle" />
+
+        <LinearLayout
+            style="@style/Widget.Aero.Card.Glass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/aero_spacing"
+            android:orientation="vertical">
+
+            <!-- Habit picker (preselected when coming from AddHabit) -->
+            <FrameLayout
+                style="@style/Widget.Aero.TextInput.Glow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilHabit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_habit"
+                    app:endIconMode="dropdown_menu">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/actHabit"
+                        style="@style/Widget.Aero.TextInput.AutoComplete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/groupHabitsMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/tvHabitsMessage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.Aero.Caption"
+                    tools:text="@string/habits_load_failed" />
+
+                <TextView
+                    android:id="@+id/btnHabitsAction"
+                    style="@style/Widget.Aero.Button.Link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:shadowRadius="0"
+                    android:textColor="@color/aero_sky_deep"
+                    android:textStyle="bold"
+                    tools:text="@string/action_retry" />
+            </LinearLayout>
+
+            <FrameLayout
+                style="@style/Widget.Aero.TextInput.Glow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/aero_spacing_small">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilRepeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_repeat"
+                    app:endIconMode="dropdown_menu">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/actRepeat"
+                        style="@style/Widget.Aero.TextInput.AutoComplete"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:simpleItemLayout="@layout/item_dropdown_simple" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/Widget.Aero.TextInput.Glow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/aero_spacing_small">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_date"
+                    app:endIconContentDescription="@string/pick_date_title"
+                    app:endIconDrawable="@drawable/ic_field_calendar"
+                    app:endIconMode="custom">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDate"
+                        style="@style/Widget.Aero.TextInput.PickerField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/aero_spacing_small"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    style="@style/Widget.Aero.TextInput.Glow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilStartTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_start_time"
+                        app:endIconContentDescription="@string/pick_time_title"
+                        app:endIconDrawable="@drawable/ic_field_clock"
+                        app:endIconMode="custom">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etStartTime"
+                            style="@style/Widget.Aero.TextInput.PickerField"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    style="@style/Widget.Aero.TextInput.Glow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/aero_spacing_small"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilDuration"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_duration"
+                        app:suffixText="@string/suffix_minutes">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDuration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="4" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/groupRepeatDays"
+                style="@style/Widget.Aero.TextInput.Glow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/aero_spacing_small">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilRepeatDays"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_repeat_days"
+                    app:helperText="@string/helper_repeat_days">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRepeatDays"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="3" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                style="@style/Widget.Aero.TextInput.Glow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/aero_spacing_small">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_notes">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNotes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:maxLines="4" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/aero_card_spacing">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCreateSchedule"
+                    style="@style/Widget.Aero.Button.Glossy.Green"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/action_create_schedule" />
+
+                <ProgressBar
+                    android:id="@+id/progressCreate"
+                    style="@style/Widget.Aero.ProgressBar"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,93 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToPadding="false"
-    android:fillViewport="true"
     tools:background="@drawable/bg_sky"
     tools:context=".ui.home.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/aero_gutter">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/home_welcome_title"
-            android:textAppearance="@style/TextAppearance.Aero.Headline" />
-
-        <!-- Welcome card -->
+        <!-- Header over the sky: greeting, name, today's date and a short summary -->
         <LinearLayout
-            style="@style/Widget.Aero.Card.Glass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/aero_spacing"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:paddingStart="@dimen/aero_gutter"
+            android:paddingEnd="@dimen/aero_gutter"
+            android:paddingBottom="@dimen/aero_spacing">
 
-            <ImageView
-                style="@style/Widget.Aero.Orb"
-                android:layout_width="@dimen/aero_orb_small"
-                android:layout_height="@dimen/aero_orb_small"
-                android:contentDescription="@string/cd_home_orb"
-                android:src="@drawable/ic_orb_logo" />
-
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/tvGreeting"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/aero_spacing"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:textAppearance="@style/TextAppearance.Aero.Subtitle"
+                tools:text="Good afternoon," />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/app_name"
-                    android:textAppearance="@style/TextAppearance.Aero.Title" />
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.Aero.Headline"
+                tools:text="demo" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/home_welcome_body"
-                    android:textAppearance="@style/TextAppearance.Aero.Body" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textAppearance="@style/TextAppearance.Aero.Subtitle"
+                android:textStyle="bold"
+                tools:text="Monday, October 26, 2026" />
+
+            <TextView
+                android:id="@+id/tvSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Aero.Subtitle"
+                android:visibility="gone"
+                tools:text="12 habits today · 2 done"
+                tools:visibility="visible" />
         </LinearLayout>
 
-        <!-- Generic placeholder content card -->
-        <LinearLayout
-            style="@style/Widget.Aero.Card.Glass"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/aero_card_spacing"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-            <TextView
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/home_today_title"
-                android:textAppearance="@style/TextAppearance.Aero.Title" />
+                android:layout_height="match_parent">
 
-            <ImageView
-                style="@style/Widget.Aero.Orb"
-                android:layout_width="@dimen/aero_orb_small"
-                android:layout_height="@dimen/aero_orb_small"
-                android:layout_marginTop="@dimen/aero_spacing"
-                android:importantForAccessibility="no"
-                android:src="@drawable/bubble" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSchedules"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingStart="@dimen/aero_gutter"
+                    android:paddingEnd="@dimen/aero_gutter"
+                    android:paddingBottom="@dimen/aero_list_bottom_inset"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_home_schedule" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/aero_spacing_small"
-                android:gravity="center"
-                android:text="@string/home_today_empty"
-                android:textAppearance="@style/TextAppearance.Aero.Caption" />
-        </LinearLayout>
+                <ProgressBar
+                    android:id="@+id/progressSchedules"
+                    style="@style/Widget.Aero.ProgressBar"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+
+                <!-- Empty state -->
+                <LinearLayout
+                    android:id="@+id/cardEmpty"
+                    style="@style/Widget.Aero.Card.Glass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/aero_gutter"
+                    android:layout_marginEnd="@dimen/aero_gutter"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        style="@style/Widget.Aero.Orb"
+                        android:layout_width="@dimen/aero_orb_small"
+                        android:layout_height="@dimen/aero_orb_small"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/bubble" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/aero_spacing_small"
+                        android:gravity="center"
+                        android:text="@string/home_empty_title"
+                        android:textAppearance="@style/TextAppearance.Aero.Title" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:text="@string/home_empty_body"
+                        android:textAppearance="@style/TextAppearance.Aero.Caption" />
+                </LinearLayout>
+
+                <!-- Error state -->
+                <LinearLayout
+                    android:id="@+id/cardError"
+                    style="@style/Widget.Aero.Card.Glass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/aero_gutter"
+                    android:layout_marginEnd="@dimen/aero_gutter"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/home_error_title"
+                        android:textAppearance="@style/TextAppearance.Aero.Title" />
+
+                    <TextView
+                        android:id="@+id/tvErrorMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.Aero.Caption"
+                        tools:text="@string/error_no_connection" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnRetry"
+                        style="@style/Widget.Aero.Button.Glossy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/aero_spacing"
+                        android:text="@string/action_retry" />
+                </LinearLayout>
+            </FrameLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+
+    <!-- Glossy "+" for creating a habit. Not wired to any destination yet. -->
+    <ImageButton
+        android:id="@+id/fabAddHabit"
+        style="@style/Widget.Aero.Fab"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/aero_gutter"
+        android:contentDescription="@string/cd_add_habit" />
+</FrameLayout>

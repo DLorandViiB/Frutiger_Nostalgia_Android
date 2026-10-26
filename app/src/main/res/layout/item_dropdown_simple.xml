@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Plain text row for exposed dropdown menus (app:simpleItemLayout), in the Aero type. -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="end"
+    android:gravity="center_vertical"
+    android:maxLines="1"
+    android:minHeight="48dp"
+    android:paddingStart="@dimen/aero_spacing"
+    android:paddingEnd="@dimen/aero_spacing"
+    android:textAppearance="@style/TextAppearance.Aero.Body"
+    tools:text="Every day" />

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Glossy green round button, normal state. Layers: dark rim, gradient body, bottom inner glow, inner white rim, top specular highlight. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/aero_stroke_green" />
+        </shape>
+    </item>
+    <item
+        android:bottom="1dp"
+        android:left="1dp"
+        android:right="1dp"
+        android:top="1dp">
+        <shape android:shape="oval">
+            <gradient
+                android:angle="270"
+                android:centerY="0.55"
+                android:startColor="@color/aero_btn_green_top"
+                android:centerColor="@color/aero_btn_green_mid"
+                android:endColor="@color/aero_btn_green_bottom" />
+        </shape>
+    </item>
+    <!-- Light bouncing up from the bottom edge -->
+    <item
+        android:bottom="3dp"
+        android:gravity="bottom|fill_horizontal"
+        android:height="22dp"
+        android:left="14dp"
+        android:right="14dp">
+        <shape android:shape="oval">
+            <gradient
+                android:angle="90"
+                android:startColor="@color/aero_bottom_glow_green"
+                android:endColor="#00FFFFFF" />
+        </shape>
+    </item>
+    <!-- Inner glow rim -->
+    <item
+        android:bottom="2dp"
+        android:left="2dp"
+        android:right="2dp"
+        android:top="2dp">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="@dimen/aero_stroke_thin"
+                android:color="#80FFFFFF" />
+        </shape>
+    </item>
+    <!-- Specular cap on the top half -->
+    <item
+        android:gravity="top|fill_horizontal"
+        android:height="@dimen/aero_fab_highlight_height"
+        android:left="8dp"
+        android:right="8dp"
+        android:top="3dp">
+        <shape android:shape="oval">
+            <gradient
+                android:angle="270"
+                android:startColor="#F2FFFFFF"
+                android:endColor="#26FFFFFF" />
+        </shape>
+    </item>
+</layer-list>
